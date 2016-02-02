@@ -1,0 +1,35 @@
+spring:
+ # HTTP ENCODING  
+http:  
+        encoding.charset: UTF-8  
+        encoding.enable: true  
+        encoding.force: true  
+    #datasource:
+jdbc:
+        name: tianzhidb
+        url: jdbc:mysql://123.56.166.50:3306/tianzhidb
+        username: dbuser
+        password: dbuser1!
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+mybatis: 
+    typeAliasesPackage: com.f2.**.domain  
+    mapperLocations: classpath:/mapper/*.xml  
+    configLocation: classpath:/mybatis-config.xml  
+ # LOGGING
+logging:
+    level:
+       com.ibatis:DEBUG

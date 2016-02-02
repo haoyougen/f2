@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.training.daos.AccountVOMapper" >
+  <resultMap id="BaseResultMap" type="com.f2.domain.AccountVO" >
+    <id column="Account_Code" property="accountCode" jdbcType="VARCHAR" />
+    <result column="Account_Pwd" property="accountPwd" jdbcType="VARCHAR" />
+    <result column="User_Code" property="userCode" jdbcType="VARCHAR" />
+    <result column="System_Face" property="systemFace" jdbcType="VARCHAR" />
+    <result column="Field_Language" property="fieldLanguage" jdbcType="VARCHAR" />
+    <result column="Account_Status" property="accountStatus" jdbcType="VARCHAR" />
+    <result column="Mem" property="mem" jdbcType="VARCHAR" />
+    <result column="Ur_Create" property="urCreate" jdbcType="VARCHAR" />
+    <result column="Date_Create" property="dateCreate" jdbcType="TIMESTAMP" />
+    <result column="Ur_Alter" property="urAlter" jdbcType="VARCHAR" />
+    <result column="Date_Alter" property="dateAlter" jdbcType="TIMESTAMP" />
+  </resultMap>
+ 
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+   Account_Code, Account_Pwd, User_Code, System_Face, Field_Language, Account_Status, 
+    Mem, Ur_Create, Date_Create, Ur_Alter, Date_Alter
+    from Sys_Account
+    where Account_Code = #{accountCode,jdbcType=VARCHAR}
+  </select>
+   
+</mapper>
